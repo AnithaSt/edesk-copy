@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <a (click)="cancel()" class="back">
+            <i class="material-icons">arrow_back</i> <sup>Back</sup>
+            
+          </a>
+      </div>
+    </div>
+    <div class="row">  
+      <div class="col-sm-6 col-lg-2 col-md-3 col-6   text-center">
+        <div class="card" routerLink="/employee/detail">
+          <div class="card-body">
+            <i class='fas fa-user-plus' style='font-size:38px'></i><br><br>
+            <h6> Add Employee</h6>           
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2  col-md-3 col-6 text-center">
+        <div class="card" routerLink="/employee/list">
+          <div class="card-body">
+            <i class='far fa-address-card' style='font-size:38px'></i><br><br>            
+            <h6>Employee List</h6>           
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

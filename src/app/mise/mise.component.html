@@ -1,0 +1,74 @@
+<!-- <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+> -->
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a (click)="cancel()" class="back">
+          <i class="material-icons">arrow_back</i> <sup>Back</sup>
+        </a>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <!-- <div class="col-sm-6 col-lg-3 col-md-4 p-3"> -->
+      <div class="col-lg-3 col-md-3 col-sm-6  p-3">
+        <select type="text" class="form-control bg-light select" #letter (change)='choice(letter.value)'>
+          <option disabled>Select</option>
+          <option value='1'>Joining Letter</option>
+          <option value='2'>Offer Letter</option>
+          <option value='3'>Service Letter</option>
+          <option value='4'>Form-16</option>
+        </select>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="col-sm-6 col-lg-3 col-md-4 p-3">
+        <button type="button" class="btn  btn-lg border bg-success">
+          <i class="fas fa-download"></i> Download
+        </button>
+
+      </div> -->
+      <!-- <div class="col-sm-6 col-lg-3 col-md-4 p-3">
+        <button type="button" class="btn  btn-lg border" >Service Letter
+            <i class="fas fa-download pr-3"></i>
+        </button>
+    </div> -->
+      <div class='card mt-5' *ngIf="show">
+        <kendo-pdf-export #pdf paperSize="A4" forcePageBreak=".page-break" margin="0.9cm" [imageResolution]="120"
+          [scale]="0.8" [repeatHeaders]="true">
+          <div *ngIf="user == 1">
+            <div class="container my-4">
+              <h1 class='text-center'>Joining Letter</h1>
+            </div>
+          </div>
+          <div *ngIf="user == 2">
+            <div class="container my-4">
+              <h1 class='text-center'>Offer Letter</h1>
+            </div>
+          </div>
+          <div *ngIf="user == 3">
+            <div class="container my-4">
+              <h1 class='text-center'>Service Letter</h1>
+            </div>
+          </div>
+          <div *ngIf="user == 4">
+            <div class="container my-4">
+              <h1 class='text-center'>Form-16</h1>
+            </div>
+          </div>
+        </kendo-pdf-export>
+        <div class='card-footer'>
+          <button id="genrate_pdf" kendo-button (click)="pdf.saveAs('sample.pdf')"
+            class="btn btn-lg btn-rounded btn-success">
+            <i class="fas fa-download"></i> Download </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+<!-- </ngx-spinner> -->
+<router-outlet></router-outlet>

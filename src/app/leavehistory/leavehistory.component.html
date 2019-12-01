@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+        <a (click)="cancel()" class="back">
+          <i class="material-icons">arrow_back</i> <sup>Back</sup>            
+        </a>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-lg-12" style="overflow-x:auto;">
+        <table class="table  table-bordered font table-striped">
+          <thead class="bg-info text-white">
+            <tr>
+              <!-- <th>Request Type</th>
+              <th>leave Request</th> -->
+              <th>Leave type</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>No of Days</th>
+              <th>Status</th>
+              <!-- <th>Submit Date</th> -->
+            </tr>
+          </thead>
+          <tbody *ngFor="let data of bindData;" class="text-dark">
+            <td>{{data.leaveType}}</td>
+            <td>{{data.startDate | date:'dd-MM-yyyy'}}</td>
+            <td>{{data.endDate | date:'dd-MM-yyyy'}}</td>
+            <td>{{data.days}}</td>
+            <td>{{data.reason}}</td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

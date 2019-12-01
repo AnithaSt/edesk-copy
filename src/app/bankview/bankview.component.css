@@ -1,0 +1,16 @@
+.container{
+  min-height: 550px;
+}
+.card{
+    width: auto;
+    cursor: context-menu;
+  }
+  .card:hover{
+    background-color:#ffffff;
+    box-shadow:none;
+  }
+  .card:hover h6, .card:hover i {
+    color: #000000;
+  }
+
+ 

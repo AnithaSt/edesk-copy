@@ -1,0 +1,71 @@
+*{
+	margin: 0px;
+ }
+.flex{
+	margin-top: 73px;
+}
+.firstimage {
+		background-image: url("/assets/space.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: auto;
+	}
+.family{
+	font-family:'Montserrat', sans-serif;
+}	
+.font {	
+	font-weight: 400;
+	font-size: 50px;
+	letter-spacing: 12px;
+    	
+	}
+
+input{
+	width:90%;
+	color: #ffffff;
+	border:none;
+	background-color: black;
+	border-bottom: 2px solid #ffffff;
+	box-shadow: none;
+	background-repeat: no-repeat;
+	border-radius: 0;
+
+}
+input:focus{
+	width:90%;
+	border:none;
+	color: #ffffff;
+	background-color: black;
+	border-bottom: 2px solid #ffffff;
+	box-shadow: none;
+	background-repeat: no-repeat;
+	border-radius: 4;
+}
+button{
+	width: 170px;
+	height: 30px;
+	padding-top: 2px;
+}
+@media only screen and (max-width:425px){
+.firstimage {
+	background-image: url("/assets/space.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+}
+
+}
+@media only screen and (max-width:768px){
+	.firstimage {
+		background-image: url("/assets/space.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: auto;
+	}
+	}
+::placeholder {
+	color: white;
+	opacity: 1; 
+	}
+			  
+			

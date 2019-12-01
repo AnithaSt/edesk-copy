@@ -1,0 +1,80 @@
+<div class="container-fluid header">
+  <div class="container p-0 mt-0">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand"><img src="assets/favicon.png" alt="image" width="34" height="34" class="mb-2 "> &nbsp;
+            &nbsp;
+            <span class="spa" routerLink="/employee/dashboard">E-Desk</span> </a>
+          <button class="navbar-toggler p-2" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown pr-3">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <span class="text ">LeaveManagement</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                  <a class="dropdown-item" routerLink="/employee/attendence">Attendence</a>
+                  <a class="dropdown-item" routerLink="/employee/leaverequest">LeaveRequest</a>
+                  <a class="dropdown-item" routerLink="/employee/leavehistory">LeaveHistory</a>
+                  <a class="dropdown-item" routerLink="/employee/myleave">MyLeave</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown pr-3">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <span class="text ">Payroll</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                  <a class="dropdown-item" routerLink="/employee/payslip">Payslip</a>
+                  <a class="dropdown-item" routerLink="/employee/mise">Misc</a>
+                  <a class="dropdown-item" routerLink="/employee/bank">Bank</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown pr-3">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <span class="text ">Employee</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-light"
+                  aria-labelledby="navbarDropdownMenuLink-4">
+                  <a class="dropdown-item" routerLink="/employee/detail"> Add Employee</a>
+                  <a class="dropdown-item" routerLink="/employee/list"> Emplyees List</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <div class="navigation bg-white mt-2">
+                  <span class="text-center pr-1 name"> {{display.userName}}</span>
+                  <a class="butto" href="">
+                    <img class="img"
+                      src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+                    <div class="logout" routerLink="/home">Logout</div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>     
+</div>
+<router-outlet></router-outlet>
+<div class="container-fluid footer">
+  <div>
+    <hr>
+    <div class="row ">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4 text-center">
+        <p class="footer-p">Copyright 2019 <strong class="brand-color">E-Desk</strong> Solutions. All Rights Reserved.
+        </p>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+</div>

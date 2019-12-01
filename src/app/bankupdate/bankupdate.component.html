@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a (click)="cancel()" class="back">
+          <i class="material-icons">arrow_back</i><sup>Back</sup>
+        </a>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-12 mt-4">
+        <h3 class="mt-3">Employee Bank Application</h3>
+        <p>Fill The Employee Bank details</p>
+        <hr>
+        <form class="mt-4 mb-4" name="myUpdate" #myUpdate="ngForm" (ngSubmit)="upDate(myUpdate.value)">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>AccountHolderName:</label><br>
+                <input type="text" placeholder="AccountHolderName" class="form-control" name="holderName"
+                  [(ngModel)]="display.holderName">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>AccountNo:</label><br>
+                <input type="number" class="form-control" placeholder="AccountNo" name="accountNo"
+                  [(ngModel)]='display.accountNo'>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>IFSC:</label><br>
+                <input type="text" class="form-control" placeholder="IFSC" name="ifsc" [(ngModel)]="display.ifsc">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>BankName:</label><br>
+                <input type="text" class="form-control" placeholder="BankName" name="bankName" [(ngModel)]="display.bankName">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Branch</label><br>
+                <input type="text" class="form-control" placeholder="Branch" name="branch" [(ngModel)]="display.branch">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>UPI-ID</label><br>
+                <input type="number" class="form-control" placeholder="UPI-ID" name="upiId"
+                  [(ngModel)]="display.upiId">
+              </div>
+            </div>
+          </div><br><br>
+          <div class="formm-group pull-right">
+            <button class="btn btn-secondary mr-3 sub" routerLink="/employee/bankview">Cancel</button>
+            <button class="btn btn-success sub">Submit</button>
+          </div>
+        </form>
+        <br><br>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

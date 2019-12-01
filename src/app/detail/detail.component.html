@@ -1,0 +1,426 @@
+<div class="container-fluid">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a (click)="cancel()" class="back">
+        <i class="material-icons">arrow_back</i> <sup>Back</sup>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <!-- <div class="col-lg-2 col-md-1 col-sm-12"></div> -->
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+      <h2>Employee Onboard Application</h2>
+      <p>Fill The Employee Onboard details</p>  
+      <hr>
+      <form class="mt-5 mb-5"  [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+        <label>Name <span class="text-danger">*</span></label>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">       
+              <input type="text" formControlName="firstName"  placeholder="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+              </div>                     
+            </div>                  
+          </div>
+          <div class="col-6">
+            <div class="form-group">                     
+              <input type="text" formControlName="lastName" placeholder="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <br> 
+        <label>Parents Name<span class="text-danger">*</span></label>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">       
+              <input type="text" formControlName="fatherName" placeholder="FatherName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fatherName.errors }" />
+              <div *ngIf="submitted && f.fatherName.errors" class="invalid-feedback">
+                <div *ngIf="f.fatherName.errors.required">Father Name is required</div>
+              </div>                     
+            </div>                  
+          </div>
+          <div class="col-6">
+            <div class="form-group">                     
+              <input type="text" formControlName="motherName" placeholder="MotherName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.motherName.errors }" />
+              <div *ngIf="submitted && f.motherName.errors" class="invalid-feedback">
+                <div *ngIf="f.motherName.errors.required">Mother Name is required</div>
+              </div>
+            </div>
+          </div>
+        </div>   
+        <br>
+        <label>Birth Date<span class="text-danger">*</span></label><br>
+        <div class="form-group">
+          <input type="text" bsDatepicker  formControlName="dateofBirth" placeholder="MM/DD/YYYY" class="input" [ngClass]="{ 'is-invalid': submitted && f.dateofBirth.errors }" >                  
+          <div *ngIf="submitted && f.dateofBirth.errors" class="invalid-feedback">
+            <div *ngIf="f.dateofBirth.errors.required">dateofBirth is required</div>
+          </div>
+        </div>
+        <label>Gender<span class="text-danger">*</span></label>
+        <div>
+          <fieldset>
+            <legend style="display: none">Gender</legend>
+            <span>
+              <input id="element_8_1" formControlName="element_8" class="element radio" type="radio" value="male" >
+              <label class="choice" for="element_8_1">Male</label>
+            </span>&nbsp;&nbsp;&nbsp;
+            <span>
+              <input id="element_8_2" formControlName="element_8" class="element radio" type="radio" value="female">
+              <label class="choice" for="element_8_2">Female</label>
+            </span>
+          </fieldset>
+        </div><br>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Email<span class="text-danger">*</span></label>
+              <input type="text" formControlName="email" class="form-control" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Offcial Email</label>
+              <input type="text" formControlName="offcialEmail" class="form-control" placeholder="Offcial Email" [ngClass]="{ 'is-invalid': submitted && f.offcialEmail.errors }" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+              <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.offcialEmail.errors.required">Email is required</div>
+                <div *ngIf="f.offcialEmail.errors.email">Email must be a valid email address</div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <br>
+       
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Phone Number<span class="text-danger">*</span></label>
+              <input type="tel" formControlName="phoneNum"  class="form-control" placeholder="Phone Number"  minlength="10" maxlength="10" [ngClass]="{'is-invalid': submitted && f.phoneNum.errors }" >
+              <div *ngIf="submitted && f.phoneNum.errors" class="invalid-feedback">
+                <div *ngIf="f.phoneNum.errors.required">Phone Number is required</div>
+                <div *ngIf="f.phoneNum.errors.minlength"> Enter valid phone number</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Alternate Number</label>
+              <input type="tel" formControlName="altNum"  class="form-control" placeholder="Alternate Number"  minlength="10" maxlength="10" [ngClass]="{'is-invalid': submitted && f.altNum.errors }" >
+            </div>
+          </div>
+        </div>
+        <br><hr>
+        <br>
+        <label>Current Address<span class="text-danger">*</span></label>
+        <div class="form-group">
+          <input type="text" formControlName="cStreet"  class="form-control" placeholder="Street Address" [ngClass]="{'is-invalid': submitted && f.cStreet.errors }">
+          <div *ngIf="submitted && f.cStreet.errors" class="invalid-feedback">
+            <div *ngIf="f.cStreet.errors.required">Street Address is required</div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <select type="text" formControlName="cCity"  class="form-control" placeholder="City" [ngClass]="{'is-invalid': submitted && f.cCity.errors }" >
+                <option value=""disabled>City</option>
+                <option>Ariyalur</option>
+                <option>Chennai</option>
+                <option>Chengalpattu</option>
+                <option>Coimbatore</option>
+                <option>Cuddalore</option>
+                <option>Dharmapuri</option>
+                <option>Dindigul</option>
+                <option>Erode</option>
+                <option>Kallakurichi</option>
+                <option>Kanchipuram</option>
+                <option>Kanniyakumari</option>
+                <option>Karur</option>
+                <option>Krishnagiri</option>
+                <option>Madurai</option>
+                <option>Nagapattinam</option>
+                <option>Namakkal</option>
+                <option>Nilgiris</option>
+                <option>Perambalur</option>
+                <option>Pudukkottai</option>
+                <option>Ramanathapuram</option>
+                <option>Salem</option>
+                <option>Sivaganga</option>
+                <option>Tenkasi</option>
+                <option>Thanjavur</option>
+                <option>Theni</option>
+                <option>Thoothukudi</option>
+                <option>Tiruchirappalli</option>
+                <option>Tirunelveli</option>
+                <option>Tiruppur</option>
+                <option>Tiruvallur</option>
+                <option>Tiruvannamalai</option>
+                <option>Tiruvarur</option>
+                <option>Vellore</option>
+                <option>Viluppuram</option>
+                <option>Virudhunagar</option>
+              </select>
+              <div *ngIf="submitted && f.cCity.errors" class="invalid-feedback">
+                <div *ngIf="f.cCity.errors.required">City is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="cState" >
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <input type="text" formControlName="cZip"  class="form-control" placeholder="Postal / Zip Code" [ngClass]="{'is-invalid': submitted && f.cZip.errors }" >
+              <div *ngIf="submitted && f.cZip.errors" class="invalid-feedback">
+                <div *ngIf="f.cZip.errors.required">Postal / Zip Code is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="country" >           
+              </div>
+          </div>
+        </div>
+        <br>
+        <label>Permanent Address<span class="text-danger">*</span></label>
+        <div class="form-group">
+            <input type="text" formControlName="pStreet"  class="form-control" placeholder="Street Address" [ngClass]="{'is-invalid': submitted && f.pStreet.errors }">
+            <div *ngIf="submitted && f.pStreet.errors" class="invalid-feedback">
+              <div *ngIf="f.pStreet.errors.required">Street Address is required</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <select type="text" formControlName="pCity"  class="form-control" placeholder="City" [ngClass]="{'is-invalid': submitted && f.pCity.errors }" >
+                <option value=""disabled>City</option>
+                <option>Ariyalur</option>
+                <option>Chennai</option>
+                <option>Chengalpattu</option>
+                <option>Coimbatore</option>
+                <option>Cuddalore</option>
+                <option>Dharmapuri</option>
+                <option>Dindigul</option>
+                <option>Erode</option>
+                <option>Kallakurichi</option>
+                <option>Kanchipuram</option>
+                <option>Kanniyakumari</option>
+                <option>Karur</option>
+                <option>Krishnagiri</option>
+                <option>Madurai</option>
+                <option>Nagapattinam</option>
+                <option>Namakkal</option>
+                <option>Nilgiris</option>
+                <option>Perambalur</option>
+                <option>Pudukkottai</option>
+                <option>Ramanathapuram</option>
+                <option>Salem</option>
+                <option>Sivaganga</option>
+                <option>Tenkasi</option>
+                <option>Thanjavur</option>
+                <option>Theni</option>
+                <option>Thoothukudi</option>
+                <option>Tiruchirappalli</option>
+                <option>Tirunelveli</option>
+                <option>Tiruppur</option>
+                <option>Tiruvallur</option>
+                <option>Tiruvannamalai</option>
+                <option>Tiruvarur</option>
+                <option>Vellore</option>
+                <option>Viluppuram</option>
+                <option>Virudhunagar</option>
+              </select>
+              <div *ngIf="submitted && f.pCity.errors" class="invalid-feedback">
+                <div *ngIf="f.pCity.errors.required">City is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="pState" >
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <input type="text" formControlName="pZip"  class="form-control" placeholder="Postal / Zip Code" [ngClass]="{'is-invalid': submitted && f.pZip.errors }" >
+              <div *ngIf="submitted && f.pZip.errors" class="invalid-feedback">
+                <div *ngIf="f.pZip.errors.required">Postal / Zip Code is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="pCountry" >              
+              </div>
+          </div>
+        </div>
+        <br>          
+        <hr>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <label>Date Of Joining <span class="text-danger">*</span></label><br>
+            <div class="form-group">
+                <input type="text" bsDatepicker  formControlName="doj" placeholder="MM/DD/YYYY" class="input" [ngClass]="{ 'is-invalid': submitted && f.doj.errors }" > 
+              <div *ngIf="submitted && f.doj.errors" class="invalid-feedback">
+                  <div *ngIf="f.doj.errors.required">Date Of Joining is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+              <label>Date Of Leaving</label><br>
+              <div class="form-group">
+                  <input type="text" bsDatepicker formControlName="dol" max="1979-12-31"  placeholder="MM/DD/YYYY" class="input">
+              </div>
+          </div>
+        </div>
+        <hr><br>
+        <h5>Education Details</h5><br>
+        <label>SSLC <span class="text-danger">*</span></label><br>          
+        <div class="form-group">
+          <input type="text" formControlName="school"  class="form-control" placeholder="SSLC School Name" [ngClass]="{'is-invalid': submitted && f.school.errors }" >
+          <div *ngIf="submitted && f.school.errors" class="invalid-feedback">
+            <div *ngIf="f.school.errors.required">SSLC School is required</div>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="number" formControlName="percentage"  class="form-control" placeholder="Percentage" [ngClass]="{'is-invalid': submitted && f.percentage.errors }">
+          <div *ngIf="submitted && f.percentage.errors" class="invalid-feedback">
+            <div *ngIf="f.percentage.errors.required">SSLC Percentage is required</div>
+          </div>
+        </div>
+        <br>
+              <div class="form-group">
+                <label>Upload SSLC MarkSheet<span class="text-danger">*</span></label>
+                <input type="file" formControlName="sslcPic" accept="file_extension" >
+              </div>
+              <br>
+              <hr><br>
+              <label>HSC</label><br>
+              <div class="form-group">
+                <input type="text" formControlName="sSchool"  class="form-control" placeholder="HSC School Name" >
+              </div><br>
+              <div class="form-group">
+                <input type="number" formControlName="sPercentage"  class="form-control" placeholder="Percentage" >           
+              </div>
+              <br>
+              <div class="form-group">
+                <label>Upload HSC MarkSheet</label>
+                <input type="file" formControlName="hscPic" accept="file_extension">
+              </div>
+              <br>
+              <hr><br>
+              <label>Diploma</label><br>
+              <div class="form-group">
+                <input type="text" formControlName="diploma"  class="form-control" placeholder="Collage Name" >                  
+              </div><br>
+              <div class="form-group">
+                  <input class="form-control" formControlName="dCourse" placeholder="Course and Department" [ngClass]="{'is-invalid': submitted && f.dCourse.errors }">            
+                </div>
+              <!-- <select class="form-control" formControlName="dCourse">
+                <option value="" disabled>Course</option>
+                <option>Diploma - Civil Engineering</option>
+                <option>Diploma - Electrical Engineering</option>
+                <option>Diploma - Electronics And Communication Engineering </option>
+                <option>Diploma - Computer Science Engineering </option>
+                <option>Diploma - Electrical & Electronics Engineering</option>
+              </select><br> -->
+              <br>
+              <div class="form-group">
+                <input type="number" formControlName="dPercentage"  class="form-control" placeholder="Percentage">
+              </div>
+                <br>                
+                <div class="form-group">
+                  <label>Upload Diploma MarkSheet:</label>
+                  <input type="file" formControlName="diplomaPic" accept="file_extension">
+                </div>
+                <br>
+                <hr><br>  
+                <label>UnderGraduate<span class="text-danger">*</span></label>
+                <div class="form-group">
+                  <input type="text" formControlName="collage"  class="form-control" placeholder="Collage Name" [ngClass]="{'is-invalid': submitted && f.collage.errors }" >
+                  <div *ngIf="submitted && f.collage.errors" class="invalid-feedback">
+                    <div *ngIf="f.collage.errors.required">CollageName is required</div>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input class="form-control" formControlName="underGraduate" placeholder="Course and Department" [ngClass]="{'is-invalid': submitted && f.underGraduate.errors }">
+                  <div *ngIf="submitted && f.underGraduate.errors" class="invalid-feedback">
+                    <div *ngIf="f.underGraduate.errors.required">Course and Department</div>
+                  </div>             
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="number" formControlName="ugPercentage"  class="form-control" placeholder="Percentage" [ngClass]="{'is-invalid': submitted && f.ugPercentage.errors }">
+                  <div *ngIf="submitted && f.ugPercentage.errors" class="invalid-feedback">
+                    <div *ngIf="f.ugPercentage.errors.required">Percentage is required</div>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label>Upload UnderGraduate MarkSheet<span class="text-danger">*</span></label>
+                  <input type="file" formControlName="ugPic" accept="file_extension">
+                </div>
+                <hr><br> 
+                <label>PostGraduate:</label>
+                <div class="form-group">
+                  <input type="text" formControlName="pgCollage"  class="form-control" placeholder="Collage Name" [ngClass]="{'is-invalid': submitted && f.pgCollage.errors }" >                 
+                </div>
+                <br>
+                <div class="form-group">
+                  <input class="form-control" formControlName="postGraduate" placeholder="Course and Department" [ngClass]="{'is-invalid': submitted && f.postGraduate.errors }">            
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="number" formControlName="pgPercentage"  class="form-control" placeholder="Percentage">
+                </div>
+                <br>
+                <div class="form-group">
+                  <label> Upload PostGraduate MarkSheet: </label>
+                  <input type="file" formControlName="pgPic" accept="file_extension">
+                </div>   
+                <hr><br>
+                <div class="form-group">
+                  <label> Upload Resume<span class="text-danger">*</span> </label><br>
+                  <input type="file" formControlName="resumePic" accept="file_extension">
+                </div><br>
+                <div class="form-group">
+                  <label> Upload Photo<span class="text-danger">*</span> </label><br>
+                  <input type="file" formControlName="photoPic" accept="file_extension">
+                </div><br>
+                <div class="form-group">
+                  <label> Upload Aadhaar Id<span class="text-danger">*</span> </label><br>
+                  <input type="file" formControlName="aadhaarPic" accept="file_extension">
+                </div><br><br>
+                
+                <div class="form-group pull-right ">  
+                  <button class="btn btn-secondary mr-3 sub"routerLink="/employee/list" >Cancel</button>      
+                  <button class="btn sub bg-success ">Submit</button>
+                </div>        
+            </form>
+        </div>
+        <!-- <div class="col-lg-2 col-md-1 col-sm-12"></div> -->
+    </div>
+  </div>
+</div>
+  <router-outlet></router-outlet> 
+

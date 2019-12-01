@@ -1,0 +1,9 @@
+.container{ 
+    min-height: 550px; 
+  }
+.ngb-datepicker.datepicker{
+    width: 100%;
+    text-align: center;
+    
+  }
+  

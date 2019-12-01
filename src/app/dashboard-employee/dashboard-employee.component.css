@@ -1,0 +1,7 @@
+.container{ 
+  min-height: 550px; 
+}
+.card{  
+    width: 90%;
+    height: 77% !important;
+}

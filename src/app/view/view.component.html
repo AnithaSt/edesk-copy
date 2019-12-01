@@ -1,0 +1,328 @@
+<div class="container-fluid">
+<div class="container family">
+    <div class="row">
+        <div class="col-12">
+          <a (click)="cancel()" class="back">
+            <i class="material-icons">arrow_back</i> <sup>Back</sup>
+          </a>
+        </div>
+      </div>
+      <div class="row">    
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-4 mb-4">	
+          <div class="card border-dark mt-0">   
+          			<div class="ml-4 mt-4 mr-4 mb-5">	
+                  <!-- <div class="row">
+                    <div class="col-12 mb-1">
+                        <img src="assets/favicon.png" alt="image" width="34" height="34" class="mb-2 "> &nbsp; &nbsp;
+                        <span class="spa ">E-Desk</span>
+                    </div>
+                  </div><hr> -->
+                <div class="row ">
+                  <div class="col-8 mt-4 ">
+                      <h4 class="text-capitalize">{{display.firstName}}&nbsp;{{display.lastName}}</h4>
+                  </div>
+                      <div class="col-4">
+                      <img src="assets/ima.png" width="100" height="100" class="float-right">	
+                    </div>
+                </div><hr>
+                <div class="row">
+                    <div class="col-md-3 col-lg-2">
+                      <p>Father Name :</p>
+                    </div>
+                    <div class="col-9">
+                        <b class="text-capitalize">{{display.fatherName	}}</b>	 
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 col-lg-2">
+                        <p>Mother Name :</p>
+                      </div>
+                      <div class="col-9">
+                          <b class="text-capitalize">{{display.motherName	}}</b>	 
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-3 col-lg-2">
+                      <p>Birth Date :</p>
+                    </div>
+                    <div class="col-9">
+                        <b>{{display.dateofBirth | date:'dd-MM-yyyy'}}</b>	
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 col-lg-2">
+                        <p>Gender :</p>
+                      </div>
+                      <div class="col-9">
+                          <b class="text-capitalize">{{display.element_8}}</b>	 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-2">
+                          <p>Email-Id :</p>
+                        </div>
+                        <div class="col-9">
+                            <b>{{display.email}}</b>	 
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-3 col-lg-2">
+                            <p>PhoneNumber :</p>
+                          </div>
+                          <div class="col-9">
+                              <b>{{display.phoneNum}}</b>	 
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-md-3 col-lg-2">  
+                              <p>AlternateNumber :</p>
+                            </div>
+                            <div class="col-9">
+                                <b>{{display.altNum}}</b>	 
+                              </div>
+                          </div>
+                       
+                          <hr>
+                          <div class="row">
+                              <div class="col-md-3 col-lg-2">
+                                <p>Date Of Joining :</p>
+                              </div>
+                              <div class="col-9">
+                                  <b>{{display.doj | date:'dd-MM-yyyy'	}}</b>	 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-lg-2">
+                                  <p>Date Of Leaving:</p>
+                                </div>
+                                <div class="col-9">
+                                    <b>{{display.dol | date:'dd-MM-yyyy'	}}</b>	 
+                                  </div>
+                              </div><hr>
+                              <br>
+                              <div class="row">
+                                  <div class="col-md-2 col-lg-2">
+                                    <p>Address :</p>
+                                  </div>
+                                  <div class="col-10" style="overflow-x:auto;">
+                                    <table  class="table" id="customers" >
+                                        <thead>
+                                        <tr>
+                                            <th >#</th>
+                                            <td >Permanent Address</td>
+                                            <td >current Address</td>                                            
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+                                              <td>Street Address</td>
+                                              <td ><b class="text-capitalize">{{display.cStreet}}</b></td>
+                                              
+                                              <td ><b class="text-capitalize">{{display.pStreet}}</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>City</td>
+                                                <td ><b class="text-capitalize">{{display.cCity}}</b></td>
+                                                
+                                                <td ><b class="text-capitalize">{{display.pCity}}</b></td>
+                                              </tr>
+                                              <tr>
+                                                  <td>State</td>
+                                                  <td ><b class="text-capitalize">{{display.cState}}</b></td>
+                                                  
+                                                  <td ><b class="text-capitalize">{{display.pState}}</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Zip Code</td>
+                                                    <td ><b class="text-capitalize">{{display.cZip}}</b></td>
+                                                    
+                                                    <td ><b class="text-capitalize">{{display.cZip}}</b></td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Country</td>
+                                                      <td ><b class="text-capitalize">{{display.country}}</b></td>
+                                                      
+                                                      <td ><b class="text-capitalize">{{display.pCountry}}</b></td>
+                                                    </tr>
+                                                  </tbody>
+                                    </table>
+                                       
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-md-2 col-lg-2">
+                                      <p>Education Details:</p>
+                                    </div>
+                                    <div class="col-10" style="overflow-x:auto;">
+                                        <table class="table" id="customers">
+                                          <tr>
+                                            <td>Course </td>
+                                            <td>Institute Name</td>
+                                            <td>Percentage</td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td><b>SSLC</b></td>
+                                            <td><b class="text-capitalize" >{{display.school}}</b></td>
+                                            <td><b>{{display.percentage}}</b></td>
+                                          </tr>
+                                          <tr *ngIf='display.sSchool'>
+                                              <td><b>HSC</b></td>
+                                              <td><b class="text-capitalize">{{display.sSchool}}</b></td>
+                                              <td><b>{{display.sPercentage}}</b></td>
+                                            </tr>
+                                            <tr *ngIf='display.dCourse'>
+                                                <td><b class="text-uppercase">{{display.dCourse}}</b></td>
+                                                <td><b class="text-capitalize">{{display.diploma}}</b></td>
+                                                <td><b>{{display.dPercentage}}</b></td>
+                                                
+                                              </tr>
+                                            <tr *ngIf='display.collage'>
+                                                <td><b class="text-uppercase">{{display.underGraduate}}</b></td>
+                                                <td><b class="text-capitalize">{{display.collage}}</b></td>
+                                                <td><b>{{display.ugPercentage }}</b></td>
+                                                
+                                              </tr>
+                                              <tr *ngIf='display.postGraduate'>
+                                                  <td><b class="text-uppercase">{{display.postGraduate}}</b></td>
+                                                  <td><b class="text-capitalize">{{display.pgCollage}}</b></td>
+                                                  <td><b>{{display.pgPercentage }}</b></td>
+                                                  
+                                                </tr>
+                                              
+                                        </table>	 
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                      <div class="col-md-3 col-lg-2">
+                                          <p>SSLC Marksheet :</p>
+                                        </div>
+                                        <div class="col-9">
+                                    <!-- Trigger the modal with a button -->
+                                      <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">SSLC Marksheet</button>
+
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="myModal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                          <div class="modal-content">
+                                            <div class="modal-header">   
+                                              <h4 class="modal-title">SSLC Marksheet</h4>
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <img src="/assets/Scan_20180925.png" width="100%">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default border-dark" data-dismiss="modal">Close</button>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>        
+                                    </div>
+
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                      <div class="col-md-3 col-lg-2">
+                                          <p>HSC Marksheet :</p>
+                                        </div>
+                                        <div class="col-9">
+                                    <!-- Trigger the modal with a button -->
+                                      <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1">HSC Marksheet</button>
+
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="myModal1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                          <div class="modal-content">
+                                            <div class="modal-header">   
+                                              <h4 class="modal-title">HSC Marksheet</h4>
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>This is a large modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default border-dark" data-dismiss="modal">Close</button>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>        
+                                    </div>
+
+                                  </div>
+
+                                  <br>
+                                  <div class="row">
+                                      <div class="col-md-3 col-lg-2">
+                                          <p>  Resume :</p>
+                                        </div>
+                                        <div class="col-9">
+                                    <!-- Trigger the modal with a button -->
+                                      <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2">Resume</button>
+
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="myModal2" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              
+                                              <h4 class="modal-title text-capitalize">{{display.firstname}} Resume</h4>
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>This is a large modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default border-dark" data-dismiss="modal">Close</button>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>        
+                                    </div>
+
+                                  </div>        
+                                  
+                                  <br>
+                                  <div class="row">
+                                      <div class="col-md-3 col-lg-2">
+                                          <p>  Aadhaar Id :</p>
+                                        </div>
+                                        <div class="col-9">
+                                    <!-- Trigger the modal with a button -->
+                                      <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal3">Aadhaar Id</button>
+
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="myModal3" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              
+                                              <h4 class="modal-title">Aadhaar Id</h4>
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>This is a large modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default border-dark" data-dismiss="modal">Close</button>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>        
+                                    </div>
+
+                                  </div>         
+                                  
+             
+            </div>				         
+          
+            </div> 
+      </div>
+      
+        
+      </div>    
+  </div>
+</div>
+  <router-outlet></router-outlet> 

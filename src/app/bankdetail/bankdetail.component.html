@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a (click)="cancel()" class="back">
+          <i class="material-icons">arrow_back</i><sup>Back</sup>
+        </a>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-12 mt-4 ">
+        <h3 class="mt-3">Employee Bank Application</h3>
+        <p>Fill The Employee Bank details</p>
+        <hr>
+        <form class="mt-4 mb-4" [formGroup]="bankDetail" (ngSubmit)="bank(bankDetail.value)">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Account Holder Name<span class="text-danger">*</span></label><br>
+                <input type="text" placeholder="Account Holder Name" class="form-control" formControlName="holderName" [ngClass]="{ 'is-invalid': submitted && f.holderName.errors }">
+                <div *ngIf="submitted && f.holderName.errors" class="invalid-feedback">
+                  <div *ngIf="f.holderName.errors.required">Account Holder Name is Requires</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Account No<span class="text-danger">*</span></label><br>
+                <input type="number" class="form-control" placeholder="Account No" formControlName="accountNo" [ngClass]="{ 'is-invalid': submitted && f.accountNo.errors }">
+                <div *ngIf="submitted && f.accountNo.errors" class="invalid-feedback">
+                  <div *ngIf="f.accountNo.errors.required">Account No is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>IFSC<span class="text-danger">*</span></label><br>
+                <input type="text" class="form-control" placeholder="IFSC" formControlName="ifsc" [ngClass]="{ 'is-invalid': submitted && f.ifsc.errors }">
+                <div *ngIf="submitted && f.ifsc.errors" class="invalid-feedback">
+                  <div *ngIf="f.ifsc.errors.required">IFSC is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Bank Name<span class="text-danger">*</span></label><br>
+                <input type="text" class="form-control" placeholder="Bank Name" formControlName="bankName" [ngClass]="{ 'is-invalid': submitted && f.bankName.errors }">
+                <div *ngIf="submitted && f.bankName.errors" class="invalid-feedback">
+                  <div *ngIf="f.bankName.errors.required">BankName is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Branch<span class="text-danger">*</span></label><br>
+                <input type="text" class="form-control" placeholder="Branch" formControlName="branch" [ngClass]="{ 'is-invalid': submitted && f.branch.errors }">
+                <div *ngIf="submitted && f.branch.errors" class="invalid-feedback">
+                  <div *ngIf="f.branch.errors.required">Branch is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="from-group">
+                <label>UPI-ID<span class="text-danger">*</span></label><br>
+                <input type="number" class="form-control" placeholder="UPI-ID" formControlName="upiId" [ngClass]="{ 'is-invalid': submitted && f.upiId.errors }">
+                <div *ngIf="submitted && f.upiId.errors" class="invalid-feedback">
+                  <div *ngIf="f.upiId.errors.required">UPI_ID is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div class="from-group pull-right">
+            <button class="btn btn-secondary mr-3 sub"routerLink="/employee/bank" >Cancel</button>
+            <button class="btn btn-success sub">Submit</button>
+          </div>
+        </form>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>

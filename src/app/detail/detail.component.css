@@ -1,0 +1,37 @@
+[formControlName="dateofBirth"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+    cursor: pointer;
+  }
+  [formControlName="dateofBirth"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [formControlName="dateofBirth"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  [formControlName="doj"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+    cursor: pointer;
+  }
+  [formControlName="doj"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [formControlName="doj"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  [formControlName="dol"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+    cursor: pointer;
+  }
+  [formControlName="dol"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [formControlName="dol"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  
+
+
+
+
+

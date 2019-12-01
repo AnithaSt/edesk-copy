@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+        <a (click)="cancel()" class="back" >
+          <i class="material-icons">arrow_back</i> <sup>Back</sup>
+        </a>
+      </div>
+    </div>
+    <div class="row">      
+      <div class="col-sm-6 col-lg-2 col-md-3 col-6   text-center">
+        <div class="card" routerLink="/employee/payslip">
+          <div class="card-body">
+            <i class='fas fa-file-invoice-dollar' style='font-size:38px'></i><br><br>
+            <h6>Payslip</h6>           
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2  col-md-3 col-6 text-center">
+        <div class="card" routerLink="/employee/mise">
+          <div class="card-body">
+            <i class='fas fa-envelope-open-text' style='font-size:38px'></i><br><br>
+            <h6>Misc</h6>           
+          </div>
+        </div>
+      </div> 
+      <div class="col-sm-6 col-lg-2 col-md-3 col-6 text-center">
+        <div class="card" routerLink="/employee/bank">
+          <div class="card-body">
+            <i class="fa fa-bank" style="font-size:38px"></i><br><br>
+            <h6>Bank</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+  
+  
